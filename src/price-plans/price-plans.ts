@@ -1,3 +1,5 @@
+import { PricePlans } from "../types/PricePlans";
+
 export enum pricePlanNames {
   PRICEPLAN0 = "price-plan-0",
   PRICEPLAN1 = "price-plan-1",
@@ -10,7 +12,7 @@ export const supplierNames = {
   POWER_FOR_EVERYONE_ENERGY_SUPPLIER: "Power for Everyone",
 };
 
-export const pricePlans = {
+export const pricePlans: PricePlans = {
   [pricePlanNames.PRICEPLAN0]: {
     supplier: supplierNames.DR_EVILS_DARK_ENERGY_ENERGY_SUPPLIER,
     rate: 10,
