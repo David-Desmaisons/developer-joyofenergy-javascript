@@ -1,4 +1,4 @@
-import { pricePlanNames, PricePlans, Reading, UsageCost } from "../types";
+import { PricePlans, Reading, UsageCost } from "../types";
 
 export const average = (readings: Reading[]) => {
   return (

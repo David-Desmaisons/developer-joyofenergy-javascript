@@ -3,12 +3,11 @@ import { readings } from "./readings/readings";
 import { readingsData } from "./readings/readings.data";
 import { read, store } from "./readings/readings-controller";
 import { recommend, compare } from "./price-plans/price-plans-controller";
-import { Data } from "./types";
 
 const app = express();
 app.use(express.json());
 
-const { getReadings, setReadings } = readings(readingsData as Data);
+const { getReadings, setReadings } = readings(readingsData);
 
 app.get("/readings/read/:smartMeterId", (req, res) => {
   res.send(read(getReadings, req));

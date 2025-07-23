@@ -30,4 +30,9 @@ export type UsageCost =
   | UsageCosts<pricePlanNames.PRICEPLAN1>
   | UsageCosts<pricePlanNames.PRICEPLAN2>;
 
+export type CompareResult = {
+  smartMeterId: string;
+  pricePlanComparisons: UsageCost[];
+};
+
 export type RequestMeterId = Request<{ smartMeterId: string }>;

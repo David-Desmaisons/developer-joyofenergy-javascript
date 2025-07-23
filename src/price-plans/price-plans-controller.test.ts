@@ -1,7 +1,7 @@
 import { readings } from "../readings/readings";
 import { compare, recommend } from "./price-plans-controller";
 import type { Request } from "express";
-import { pricePlanNames, type UsageCost, type RequestMeterId } from "../types";
+import { pricePlanNames, type UsageCost, type RequestMeterId, CompareResult } from "../types";
 import { meterNames } from "../meters/meters";
 
 describe("price plans", () => {
@@ -14,7 +14,7 @@ describe("price plans", () => {
       ],
     });
 
-    const expected = {
+    const expected: CompareResult = {
       pricePlanComparisons: [
         {
           [pricePlanNames.PRICEPLAN0]: (0.26785 / 48) * 10,
