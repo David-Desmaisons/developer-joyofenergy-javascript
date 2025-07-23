@@ -1,13 +1,8 @@
-import {
-  type GetReadings,
-  meterNames,
-  type RequestMeterId,
-  type SetReadings,
-} from "../types/type";
+import type { GetReadings, RequestMeterId, SetReadings } from "../types/type";
 import { Request } from "express";
 
 export const read = (getData: GetReadings, req: RequestMeterId) => {
-  const meter = req.params.smartMeterId as meterNames;
+  const meter = req.params.smartMeterId;
   return getData(meter);
 };
 

@@ -1,18 +1,13 @@
 import { pricePlans } from "./price-plans";
 import { usageForAllPricePlans } from "../usage/usage";
 import type { Request } from "express";
-import {
-  type GetReadings,
-  meterNames,
-  type RequestMeterId,
-  type UsageCost,
-} from "../types/type";
+import type { GetReadings, RequestMeterId, UsageCost } from "../types/type";
 
 export const recommend = (
   getReadings: GetReadings,
   req: RequestMeterId
 ): UsageCost[] => {
-  const meter = req.params.smartMeterId as meterNames;
+  const meter = req.params.smartMeterId;
   const pricePlanComparisons = usageForAllPricePlans(
     pricePlans,
     getReadings(meter)
@@ -32,7 +27,7 @@ const extractCost = (cost: UsageCost): number => {
 };
 
 export const compare = (getData: GetReadings, req: Request) => {
-  const meter = req.params.smartMeterId as meterNames;
+  const meter = req.params.smartMeterId;
   const pricePlanComparisons = usageForAllPricePlans(
     pricePlans,
     getData(meter)

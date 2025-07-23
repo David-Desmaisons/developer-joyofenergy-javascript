@@ -1,4 +1,4 @@
-import { meterNames } from "../types/type";
+import { meterNames } from "../meters/meters";
 import { readings } from "./readings";
 import { readingsData } from "./readings.data";
 
@@ -19,7 +19,7 @@ describe("readings", () => {
   it("should get empty array if can't find meter id", () => {
     const { getReadings } = readings(readingsData);
 
-    expect(getReadings("meter-no" as meterNames)).toHaveLength(0);
+    expect(getReadings("meter-no")).toHaveLength(0);
   });
 
   it("should set readings with meter id", () => {

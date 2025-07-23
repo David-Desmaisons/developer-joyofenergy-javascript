@@ -2,7 +2,8 @@ import { read, store } from "./readings-controller";
 import { readingsData } from "./readings.data";
 import { readings } from "./readings";
 import type { Request } from "express";
-import { meterNames, type RequestMeterId } from "../types/type";
+import type { RequestMeterId } from "../types/type";
+import { meterNames } from "../meters/meters";
 
 describe("readings", () => {
   it("should get readings with meter id from params", () => {

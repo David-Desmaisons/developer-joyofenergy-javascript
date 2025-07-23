@@ -1,4 +1,4 @@
-import { meterNames } from "../types/type";
+import { meterNames } from "../meters/meters";
 import { readingsData } from "./readings.data";
 
 describe("generate data", () => {

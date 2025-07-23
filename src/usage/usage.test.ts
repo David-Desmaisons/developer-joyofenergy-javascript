@@ -1,7 +1,7 @@
-import { meterPricePlanMap } from "../meters/meters";
+import { meterNames, meterPricePlanMap } from "../meters/meters";
 import { pricePlans } from "../price-plans/price-plans";
 import { readings } from "../readings/readings";
-import { meterNames, pricePlanNames } from "../types/type";
+import { pricePlanNames } from "../types/type";
 import {
   average,
   timeElapsedInHours,

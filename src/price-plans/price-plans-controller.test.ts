@@ -1,7 +1,8 @@
 import { readings } from "../readings/readings";
 import { compare, recommend } from "./price-plans-controller";
 import type { Request } from "express";
-import { meterNames, pricePlanNames, type RequestMeterId } from "../types/type";
+import { pricePlanNames, type RequestMeterId } from "../types/type";
+import { meterNames } from "../meters/meters";
 
 describe("price plans", () => {
   it("should compare usage cost for all price plans", () => {
