@@ -1,14 +1,12 @@
-import { meters } from "../meters/meters";
-import { pricePlanNames } from "./price-plans";
 import { readings } from "../readings/readings";
 import { compare, recommend } from "./price-plans-controller";
-import { Request } from "express";
-import { RequestMeterId } from "../types/type";
+import type { Request } from "express";
+import { meterNames, pricePlanNames, type RequestMeterId } from "../types/type";
 
 describe("price plans", () => {
   it("should compare usage cost for all price plans", () => {
     const { getReadings } = readings({
-      [meters.METER0]: [
+      [meterNames.METER0]: [
         { time: 1607686125, reading: 0.26785 },
         { time: 1607599724, reading: 0.26785 },
         { time: 1607513324, reading: 0.26785 },
@@ -27,12 +25,12 @@ describe("price plans", () => {
           [pricePlanNames.PRICEPLAN2]: (0.26785 / 48) * 1,
         },
       ],
-      smartMeterId: meters.METER0,
+      smartMeterId: meterNames.METER0,
     };
 
     const recommendation = compare(getReadings, {
       params: {
-        smartMeterId: meters.METER0,
+        smartMeterId: meterNames.METER0,
       },
       query: {},
     } as RequestMeterId);
@@ -42,7 +40,7 @@ describe("price plans", () => {
 
   it("should recommend usage cost for all price plans by ordering from cheapest to expensive", () => {
     const { getReadings } = readings({
-      [meters.METER0]: [
+      [meterNames.METER0]: [
         { time: 1607686125, reading: 0.26785 },
         { time: 1607599724, reading: 0.26785 },
         { time: 1607513324, reading: 0.26785 },
@@ -63,7 +61,7 @@ describe("price plans", () => {
 
     const recommendation = recommend(getReadings, {
       params: {
-        smartMeterId: meters.METER0,
+        smartMeterId: meterNames.METER0,
       },
       query: {},
     } as Request<{ smartMeterId: string }>);
@@ -73,7 +71,7 @@ describe("price plans", () => {
 
   it("should limit recommendation", () => {
     const { getReadings } = readings({
-      [meters.METER0]: [
+      [meterNames.METER0]: [
         { time: 1607686125, reading: 0.26785 },
         { time: 1607599724, reading: 0.26785 },
         { time: 1607513324, reading: 0.26785 },
@@ -91,7 +89,7 @@ describe("price plans", () => {
 
     const recommendation = recommend(getReadings, {
       params: {
-        smartMeterId: meters.METER0,
+        smartMeterId: meterNames.METER0,
       },
       query: {
         limit: "2",

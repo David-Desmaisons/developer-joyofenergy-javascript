@@ -1,5 +1,4 @@
-import { meters } from "../meters/meters";
-import { Data, Reading } from "../types/type";
+import { type Data, meterNames, type Reading } from "../types/type";
 
 const generateSingle = (): Reading[] => {
   const startTime = 1607686125; // Friday, 11 December 2020 11:28:45 GMT+00:00
@@ -14,7 +13,7 @@ const generateSingle = (): Reading[] => {
 
 const generateAllMeters = () => {
   const readings: Data = {};
-  for (const key of Object.values(meters)) {
+  for (const key of Object.values(meterNames)) {
     readings[key] = generateSingle();
   }
   return readings;

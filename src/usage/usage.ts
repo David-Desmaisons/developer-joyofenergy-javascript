@@ -31,11 +31,3 @@ export const usageForAllPricePlans = (
     };
   });
 };
-
-module.exports = {
-  average,
-  timeElapsedInHours,
-  usage,
-  usageCost,
-  usageForAllPricePlans,
-};

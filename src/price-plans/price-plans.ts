@@ -1,10 +1,4 @@
-import { PricePlans } from "../types/type";
-
-export enum pricePlanNames {
-  PRICEPLAN0 = "price-plan-0",
-  PRICEPLAN1 = "price-plan-1",
-  PRICEPLAN2 = "price-plan-2",
-}
+import { pricePlanNames, type PricePlans } from "../types/type";
 
 export const supplierNames = {
   DR_EVILS_DARK_ENERGY_ENERGY_SUPPLIER: "Dr Evil's Dark Energy",
