@@ -4,7 +4,7 @@ import type {
   RequestMeterId,
   SetReadings,
 } from "../types";
-import { Request } from "express";
+import type { Request } from "express";
 
 export const read = (getData: GetReadings, req: RequestMeterId): Reading[] => {
   const meter = req.params.smartMeterId;
