@@ -1,4 +1,4 @@
-import type { GetReadings, RequestMeterId, SetReadings } from "../types/type";
+import type { GetReadings, RequestMeterId, SetReadings } from "../types";
 import { Request } from "express";
 
 export const read = (getData: GetReadings, req: RequestMeterId) => {

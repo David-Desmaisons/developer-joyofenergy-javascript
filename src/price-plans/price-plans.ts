@@ -1,4 +1,4 @@
-import { pricePlanNames, type PricePlans } from "../types/type";
+import { pricePlanNames, type PricePlans } from "../types";
 
 export const supplierNames = {
   DR_EVILS_DARK_ENERGY_ENERGY_SUPPLIER: "Dr Evil's Dark Energy",

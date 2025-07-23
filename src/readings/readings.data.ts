@@ -1,5 +1,5 @@
 import { meterNames } from "../meters/meters";
-import { type Data, type Reading } from "../types/type";
+import { type Data, type Reading } from "../types";
 
 const generateSingle = (): Reading[] => {
   const startTime = 1607686125; // Friday, 11 December 2020 11:28:45 GMT+00:00

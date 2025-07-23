@@ -2,7 +2,7 @@ import { read, store } from "./readings-controller";
 import { readingsData } from "./readings.data";
 import { readings } from "./readings";
 import type { Request } from "express";
-import type { RequestMeterId } from "../types/type";
+import type { RequestMeterId } from "../types";
 import { meterNames } from "../meters/meters";
 
 describe("readings", () => {

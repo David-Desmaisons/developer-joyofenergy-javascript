@@ -6,10 +6,7 @@ export type Data = Record<string, Reading[]>;
 
 export type GetReadings = (meterId: string) => Reading[];
 
-export type SetReadings = (
-  meterId: string,
-  readings: Reading[]
-) => Reading[];
+export type SetReadings = (meterId: string, readings: Reading[]) => Reading[];
 
 export type PricePlan = {
   supplier: string;
@@ -24,6 +21,13 @@ export enum pricePlanNames {
 
 export type PricePlans = Record<pricePlanNames, PricePlan>;
 
-export type UsageCost = Partial<Record<pricePlanNames, number | undefined>>;
+export type UsageCosts<TKey extends pricePlanNames> = {
+  [Property in TKey]: number;
+};
+
+export type UsageCost =
+  | UsageCosts<pricePlanNames.PRICEPLAN0>
+  | UsageCosts<pricePlanNames.PRICEPLAN1>
+  | UsageCosts<pricePlanNames.PRICEPLAN2>;
 
 export type RequestMeterId = Request<{ smartMeterId: string }>;

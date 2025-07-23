@@ -1,5 +1,5 @@
 import { pricePlans } from "../price-plans/price-plans";
-import { pricePlanNames } from "../types/type";
+import { pricePlanNames } from "../types";
 
 export const meterNames = {
   METER0: "smart-meter-0",

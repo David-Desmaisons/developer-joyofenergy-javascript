@@ -1,4 +1,4 @@
-import type { Data, Reading } from "../types/type";
+import type { Data, Reading } from "../types";
 
 export const readings = (data: Data) => ({
   getReadings: (meterId: string): Reading[] => data[meterId] || [],

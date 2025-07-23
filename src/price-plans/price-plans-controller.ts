@@ -1,7 +1,7 @@
 import { pricePlans } from "./price-plans";
 import { usageForAllPricePlans } from "../usage/usage";
 import type { Request } from "express";
-import type { GetReadings, RequestMeterId, UsageCost } from "../types/type";
+import type { GetReadings, RequestMeterId, UsageCost } from "../types";
 
 export const recommend = (
   getReadings: GetReadings,

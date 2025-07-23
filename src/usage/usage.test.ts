@@ -1,7 +1,7 @@
 import { meterNames, meterPricePlanMap } from "../meters/meters";
 import { pricePlans } from "../price-plans/price-plans";
 import { readings } from "../readings/readings";
-import { pricePlanNames } from "../types/type";
+import { pricePlanNames, UsageCost } from "../types";
 import {
   average,
   timeElapsedInHours,
@@ -79,7 +79,7 @@ describe("usage", () => {
       ],
     });
 
-    const expected = [
+    const expected: UsageCost[] = [
       {
         [pricePlanNames.PRICEPLAN0]: (0.26785 / 48) * 10,
       },
