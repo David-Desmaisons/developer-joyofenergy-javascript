@@ -1,4 +1,4 @@
-import { PricePlans } from "../types/PricePlans";
+import { PricePlans } from "../types/type";
 
 export enum pricePlanNames {
   PRICEPLAN0 = "price-plan-0",

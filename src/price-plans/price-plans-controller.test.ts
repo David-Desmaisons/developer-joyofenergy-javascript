@@ -3,7 +3,7 @@ import { pricePlanNames } from "./price-plans";
 import { readings } from "../readings/readings";
 import { compare, recommend } from "./price-plans-controller";
 import { Request } from "express";
-import { RequestMeterId } from "../types/Requests";
+import { RequestMeterId } from "../types/type";
 
 describe("price plans", () => {
   it("should compare usage cost for all price plans", () => {

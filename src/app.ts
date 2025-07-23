@@ -3,7 +3,7 @@ import { readings } from "./readings/readings";
 import { readingsData } from "./readings/readings.data";
 import { read, store } from "./readings/readings-controller";
 import { recommend, compare } from "./price-plans/price-plans-controller";
-import { Data } from "./types/Data";
+import { Data } from "./types/type";
 
 const app = express();
 app.use(express.json());

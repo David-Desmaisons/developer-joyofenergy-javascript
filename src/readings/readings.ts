@@ -1,9 +1,5 @@
 import { meters } from "../meters/meters";
-import { Data } from "../types/Data";
-import { Reading } from "../types/Reading";
-
-export type GetReadings = (meterId: meters) => Reading[];
-export type SetReadings = (meterId: meters, readings: Reading[]) => Reading[];
+import { Data, Reading } from "../types/type";
 
 export const readings = (data: Data) => ({
   getReadings: (meterId: meters): Reading[] => data[meterId] || [],

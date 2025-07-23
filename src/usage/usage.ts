@@ -1,6 +1,4 @@
-import { PricePlans } from "../types/PricePlans";
-import { Reading } from "../types/Reading";
-import { UsageCost } from "../types/UsageCost";
+import { PricePlans, Reading, UsageCost } from "../types/type";
 
 export const average = (readings: Reading[]) => {
   return (
@@ -26,7 +24,7 @@ export const usageCost = (readings: Reading[], rate: number) => {
 export const usageForAllPricePlans = (
   pricePlans: PricePlans,
   readings: Reading[]
-) : UsageCost[] => {
+): UsageCost[] => {
   return Object.entries(pricePlans).map(([key, value]) => {
     return {
       [key]: usageCost(readings, value.rate),
