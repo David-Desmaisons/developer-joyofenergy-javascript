@@ -4,10 +4,11 @@ import { Request } from "express";
 import { GetReadings } from "../readings/readings";
 import { meters } from "../meters/meters";
 import { UsageCost } from "../types/UsageCost";
+import { RequestMeterId } from "../types/Requests";
 
 export const recommend = (
   getReadings: GetReadings,
-  req: Request<{ smartMeterId: string }>
+  req: RequestMeterId
 ): UsageCost[] => {
   const meter = req.params.smartMeterId as meters;
   const pricePlanComparisons = usageForAllPricePlans(

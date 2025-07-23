@@ -3,6 +3,7 @@ import { pricePlanNames } from "./price-plans";
 import { readings } from "../readings/readings";
 import { compare, recommend } from "./price-plans-controller";
 import { Request } from "express";
+import { RequestMeterId } from "../types/Requests";
 
 describe("price plans", () => {
   it("should compare usage cost for all price plans", () => {
@@ -34,7 +35,7 @@ describe("price plans", () => {
         smartMeterId: meters.METER0,
       },
       query: {},
-    } as Request<{ smartMeterId: string }>);
+    } as RequestMeterId);
 
     expect(recommendation).toEqual(expected);
   });
@@ -95,7 +96,7 @@ describe("price plans", () => {
       query: {
         limit: "2",
       },
-    } as unknown as Request<{ smartMeterId: string }>);
+    } as unknown as RequestMeterId);
 
     expect(recommendation).toEqual(expected);
   });
